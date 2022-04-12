@@ -49,7 +49,7 @@ function setup() {
     this.color = "#AA33AA";
   }
   click2.onPress = function () {
-    alert("Hi there!");
+    alert("Hello, Stranger! This is Hanbee Cho.");
   }
 
   click3 = new Clickable();
