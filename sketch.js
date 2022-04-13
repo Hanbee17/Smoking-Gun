@@ -8,7 +8,8 @@ function preload(){
   clickImg = loadImage('./logo.png');
 }
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(800, 800);
+  background(230)
 
   //Create, style and resize clickables.
   click1 = new Clickable();
@@ -43,7 +44,7 @@ function setup() {
   click2.locate(60, 60);
   click2.resize(250, 100);
   click2.onOutside = function () {
-    this.color = "#FFFFFF";
+    this.color = "#5E3023";
   }
   click2.onHover = function () {
     this.color = "#AA33AA";
@@ -55,7 +56,7 @@ function setup() {
   click3 = new Clickable();
   click3.image = clickImg;
   click3.locate(280,250);
-  click3.resize(100,100);
+  click3.resize(200,200);
   click3.text = "";
   click3.onHover = function () {
     this.color = "#AA33AA";
