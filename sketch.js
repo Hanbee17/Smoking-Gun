@@ -2,56 +2,93 @@ var canvas;
 var click1;
 var click2;
 var startButton;
-// var click4;
-// var click5;
+var PopUpButton;
 var clickImg;
+
 let gameState = 'first';
 
 function preload(){
   clickImg = loadImage('./logo.png');
 }
+
 function setup() {
   createCanvas(800, 800);
   frameRate(60);
   background(0);
-  // click1();
-  // click2();
   titleScreen();
 }
 
 function draw() {
-  //background(0);
   startButton.draw();
   switch (gameState) {
     case 'title':
       titleScreen();
-      //startButton.draw();
+      break;
+    case 'PopUp':
+      PopUpScreen();
       break;
     case 'main':
       mainScreen();
-      break;
   }
-  //click2.draw();
-  //click4.draw();
-  //click5.draw();
 }
 
-// function mouseIsPressed() {
-//   if (gameState === 'title') {
-//     if (startButton === true) {
-//       gameState = 'main';
-//       bgR = 100;
-//       bgG = 240;
-//       bgB = 100;
-//     }
-//   } else if (gameState === 'main') {
-//     if (startButton === true) {
-//       bgR = random(255);
-//         bgG = random(255);
-//         bgB = random(255);
-//     }
-//   }
-// }
+function startButton() {
+  startButton = new Clickable();
+  startButton.image = clickImg;
+  startButton.locate(280,500);
+  startButton.resize(200,100);
+  startButton.text = "";
+    startButton.onPress = function () {
+      gameState = 'PopUp'
+    }
+}
+
+function titleScreen () {
+  background(100, 100, 240);
+  textSize(75);
+  textAlign(CENTER);
+  text('The Title', width*0.5, height*0.33);
+  textSize(25);
+  text('Hi, This is the very first page, Welcome!', width*0.5, height*0.4);
+  startButton();
+}
+
+function mainScreen() {
+  background(200,30,30);
+  textAlign(CENTER);
+  textSize(25);
+  text('Hey! This will be the main page!', width*0.5, height*0.4);
+}
+
+function PopUpButton() {
+  PopUpButton = new Clickable();
+
+  PopUpButton.text = "Click Me!";
+  PopUpButton.locate(280, 500);
+  PopUpButton.resize(200, 100);
+    PopUpButton.onRelease = function () {
+    gameState = 'main'
+  }
+}
+
+function PopUpScreen() {
+  rectMode(CENTER);
+  rect(400,400, 500,500);
+  fill(0);
+  push();
+  textAlign(CENTER);
+  textSize(45);
+  fill(214,40,40);
+  text('TRIGGER WARNING', width*0.5, height*0.35);
+  textSize(30);
+  fill(255);
+  text('The following game contains',width*0.5, height*0.45);
+  text('material that may be harmful or',width*0.5, height*0.5);
+  text('traumatizing to some audiences.',width*0.5, height*0.55);
+  pop();
+  PopUpButton();
+}
+
 
 // function click1() {
 //   click1 = new Clickable();
@@ -89,39 +126,6 @@ function draw() {
 //     alert("Hello, Stranger! This is Hanbee Cho.");
 //   }
 // }
-
-function startButton() {
-  startButton = new Clickable();
-  startButton.image = clickImg;
-  startButton.locate(280,500);
-  startButton.resize(200,100);
-  startButton.text = "";
-  startButton.onOutside = function () {
-    this.color = "#FFFFFF";
-    this.noTint = true;
-
-    startButton.onPress = function () {
-      gameState = 'main'
-    }
-  }
-}
-
-function titleScreen () {
-  background(100, 100, 240);
-  textSize(75);
-  textAlign(CENTER);
-  text('The Title', width*0.5, height*0.33);
-  textSize(25);
-  text('Hi, This is the very first page, Welcome!', width*0.5, height*0.4);
-  startButton();
-}
-
-function mainScreen() {
-  background(200,30,30);
-  textAlign(CENTER);
-  textSize(25);
-  text('Hey! This will be the main page!', width*0.5, height*0.4);
-}
 
   // image will stretch to fill button by default
   // click4 = new Clickable();
