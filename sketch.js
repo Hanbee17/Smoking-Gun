@@ -25,7 +25,7 @@ function draw() {
       break;
     case 'PopUp':
       PopUpScreen();
-      //click2.draw();
+      click2.draw();
       break;
     case 'main':
       mainScreen();
