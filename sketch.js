@@ -1,8 +1,6 @@
 var canvas;
 var click1;
 var click2;
-var startButton;
-var PopUpButton;
 var clickImg;
 
 let gameState = 'first';
@@ -19,13 +17,15 @@ function setup() {
 }
 
 function draw() {
-  startButton.draw();
+  //click2.draw();
+  click1.draw();
   switch (gameState) {
     case 'title':
       titleScreen();
       break;
     case 'PopUp':
       PopUpScreen();
+      //click2.draw();
       break;
     case 'main':
       mainScreen();
@@ -33,13 +33,26 @@ function draw() {
 }
 
 function startButton() {
-  startButton = new Clickable();
-  startButton.image = clickImg;
-  startButton.locate(280,500);
-  startButton.resize(200,100);
-  startButton.text = "";
-    startButton.onPress = function () {
+  click1 = new Clickable();
+  click1.image = clickImg;
+  click1.locate(280, 500);
+  click1.resize(200, 100);
+  click1.text = "";
+    click1.onRelease = function () {
       gameState = 'PopUp'
+    }
+}
+
+function popUpButton() {
+  click2 = new Clickable();
+  click2.text = "Click Me!";
+  click2.cornerRadius = 0;
+  click2.textScaled = true;
+  //click2.textAlign = CENTER;
+  click2.locate(400, 550);
+  click2.resize(150, 50);
+    click2.onRelease = function () {
+      gameState = 'main'
     }
 }
 
@@ -53,30 +66,12 @@ function titleScreen () {
   startButton();
 }
 
-function mainScreen() {
-  background(200,30,30);
-  textAlign(CENTER);
-  textSize(25);
-  text('Hey! This will be the main page!', width*0.5, height*0.4);
-}
-
-function PopUpButton() {
-  PopUpButton = new Clickable();
-
-  PopUpButton.text = "Click Me!";
-  PopUpButton.locate(280, 500);
-  PopUpButton.resize(200, 100);
-    PopUpButton.onRelease = function () {
-    gameState = 'main'
-  }
-}
-
 function PopUpScreen() {
   rectMode(CENTER);
   rect(400,400, 500,500);
   fill(0);
-  push();
   textAlign(CENTER);
+  push();
   textSize(45);
   fill(214,40,40);
   text('TRIGGER WARNING', width*0.5, height*0.35);
@@ -86,9 +81,15 @@ function PopUpScreen() {
   text('material that may be harmful or',width*0.5, height*0.5);
   text('traumatizing to some audiences.',width*0.5, height*0.55);
   pop();
-  PopUpButton();
+  popUpButton();
 }
 
+function mainScreen() {
+  background(200,30,30);
+  textAlign(CENTER);
+  textSize(25);
+  text('Hey! This will be the main page!', width*0.5, height*0.4);
+}
 
 // function click1() {
 //   click1 = new Clickable();
