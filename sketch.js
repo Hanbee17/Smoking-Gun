@@ -5,6 +5,9 @@ var clickClue1;
 var clickClue2;
 var clickClue3;
 var clickClue4;
+var clickClue5;
+var clickClue6;
+
 var clickGuess;
 var suspectButton1;
 var suspectButton2;
@@ -22,6 +25,19 @@ function preload() {
   clickImg = loadImage('./logo.png');
   frontImage = loadImage('./assets/1.png');
   mainBackground = loadImage('./assets/2.png');
+  myClue1 = loadImage('./assets/clue1.png');
+  myClue2 = loadImage('./assets/clue2.png');
+  myClue3 = loadImage('./assets/clue3.png');
+  myClue4 = loadImage('./assets/clue4.png');
+  myClue5 = loadImage('./assets/clue5.png');
+  myClue6 = loadImage('./assets/clue6.png');
+  mySuspect1 = loadImage('./assets/suspect1.png');
+  mySuspect2 = loadImage('./assets/suspect2.png');
+  mySuspect3 = loadImage('./assets/suspect3.png');
+
+  // for (i = 0; i <= 5; i++) {
+  //   myClue[i] = loadImage('./assets/clue+[i]+.png');
+  // }
 }
 
 function setup() {
@@ -55,6 +71,12 @@ function draw() {
     case 'clue4':
       cluePopUp4();
       break;
+    case 'clue5':
+      cluePopUp5();
+      break;
+    case 'clue6':
+      cluePopUp6();
+      break;
     case 'suspectScreen':
       guessScreen();
       break;
@@ -69,6 +91,8 @@ function draw() {
   suspectButton2.draw();
   suspectButton1.draw();
   clickGuess.draw();
+  clickClue6.draw();
+  clickClue5.draw();
   clickClue4.draw();
   clickClue3.draw();
   clickClue2.draw();
@@ -90,10 +114,19 @@ function popUpButton() {
 
 function mainButton() {
   popUpClick.locate(-400, -500);
-  clickClue1.locate(200, 200);
-  clickClue2.locate(600, 200);
-  clickClue3.locate(600, 600);
-  clickClue4.locate(200, 650);
+
+  //duvet
+  clickClue1.locate(280, 330);
+  //calander
+  clickClue2.locate(60, 200);
+  //body
+  clickClue3.locate(500, 350);
+  //blood
+  clickClue4.locate(700, 350);
+  //phone
+  clickClue5.locate(510, 530);
+  //paper
+  clickClue6.locate(220, 420);
 
   clickGuess.locate(600, 50);
 
@@ -106,6 +139,8 @@ function mainButton() {
 
 function lastPageButton() {
   clickGuess.locate(-400, -500);
+  clickClue6.locate(-400, -500);
+  clickClue5.locate(-400, -500);
   clickClue4.locate(-400, -500);
   clickClue3.locate(-400, -500);
   clickClue3.locate(-400, -500);
@@ -119,6 +154,8 @@ function lastPageButton() {
 
 function wrongPopupButton() {
   clickGuess.locate(-400, -500);
+  clickClue6.locate(-400, -500);
+  clickClue5.locate(-400, -500);
   clickClue4.locate(-400, -500);
   clickClue3.locate(-400, -500);
   clickClue3.locate(-400, -500);
@@ -138,11 +175,15 @@ function gobacktoMainPageButton() {
 function InitialButton() {
   firstClick = new Clickable();
   //firstClick.image = clickImg;``
-  //firstClick.locate(200, 600);
   firstClick.resize(150, 50);
   firstClick.color = "#FFFFFF";
   firstClick.cornerRadius = 0;
+  firstClick.strokeWeight = 0;
+  firstClick.stroke = "#000000";
   firstClick.text = "Start";
+  firstClick.textColor = "#000000";
+  firstClick.textSize = 25;
+  //firstClick.textFont = "sans-serif";
   firstClick.textScaled = true;
   firstClick.onRelease = function() {
     gameState = 'PopUp'
@@ -160,51 +201,98 @@ function InitialButton() {
     gameState = 'main'
   }
 
+  //duvet
   clickClue1 = new Clickable();
   clickClue1.image = clickImg;
   clickClue1.locate(-400, -500);
-  clickClue1.resize(150, 50);
+  clickClue1.resize(50, 50);
   clickClue1.text = "  ";
   clickClue1.onRelease = function() {
     gameState = 'clue1'
+    clickClue6.locate(-400, -500);
+    clickClue5.locate(-400, -500);
+    clickClue4.locate(-400, -500);
+    clickClue3.locate(-400, -500);
     clickClue3.locate(-400, -500);
     clickClue2.locate(-400, -500);
     clickClue1.locate(-400, -500);
   }
 
+  //calander
   clickClue2 = new Clickable();
   clickClue2.image = clickImg;
   clickClue2.locate(-400, -500);
-  clickClue2.resize(150, 50);
+  clickClue2.resize(100, 120);
   clickClue2.text = "   ";
   clickClue2.onPress = function() {
     gameState = 'clue2'
+    clickClue6.locate(-400, -500);
+    clickClue5.locate(-400, -500);
+    clickClue4.locate(-400, -500);
     clickClue3.locate(-400, -500);
     clickClue2.locate(-400, -500);
     clickClue1.locate(-400, -500);
   }
 
+  //body
   clickClue3 = new Clickable();
   clickClue3.image = clickImg;
   clickClue3.locate(-400, -500);
-  clickClue3.resize(150, 50);
+  clickClue3.resize(150, 150);
   clickClue3.text = "   ";
   clickClue3.onPress = function() {
     gameState = 'clue3'
+    clickClue6.locate(-400, -500);
+    clickClue5.locate(-400, -500);
+    clickClue4.locate(-400, -500);
     clickClue3.locate(-400, -500);
     clickClue2.locate(-400, -500);
     clickClue1.locate(-400, -500);
   }
 
+  //blood
   clickClue4 = new Clickable();
   clickClue4.image = clickImg;
   clickClue4.locate(-400, -500);
-  clickClue4.resize(150, 50);
+  clickClue4.resize(40, 150);
   clickClue4.text = "   ";
   clickClue4.onPress = function() {
     gameState = 'clue4'
+    clickClue6.locate(-400, -500);
+    clickClue5.locate(-400, -500);
     clickClue4.locate(-400, -500);
     clickClue3.locate(-400, -500);
+    clickClue2.locate(-400, -500);
+    clickClue1.locate(-400, -500);
+  }
+
+  //phone
+  clickClue5 = new Clickable();
+  clickClue5.image = clickImg;
+  clickClue5.locate(-400, -500);
+  clickClue5.resize(30, 40);
+  clickClue5.text = "   ";
+  clickClue5.onPress = function() {
+    gameState = 'clue5'
+    clickClue6.locate(-400, -500);
+    clickClue5.locate(-400, -500);
+    clickClue4.locate(-400, -500);
+    clickClue3.locate(-400, -500);
+    clickClue2.locate(-400, -500);
+    clickClue1.locate(-400, -500);
+  }
+
+  //paper
+  clickClue6 = new Clickable();
+  clickClue6.image = clickImg;
+  clickClue6.locate(-400, -500);
+  clickClue6.resize(40, 40);
+  clickClue6.text = "   ";
+  clickClue6.onPress = function() {
+    gameState = 'clue6'
+    clickClue6.locate(-400, -500);
+    clickClue5.locate(-400, -500);
+    clickClue4.locate(-400, -500);
     clickClue3.locate(-400, -500);
     clickClue2.locate(-400, -500);
     clickClue1.locate(-400, -500);
@@ -225,30 +313,46 @@ function InitialButton() {
     // clickClue1.locate(-400, -500);
   }
 
+  //Boy
   suspectButton1 = new Clickable();
-  suspectButton1.image = clickImg;
+  suspectButton1.image = mySuspect1;
+  suspectButton1.fitImage = true;
+  suspectButton1.imageScale = 1.2;
   suspectButton1.locate(-400, -500);
-  suspectButton1.resize(150, 50);
+  suspectButton1.resize(150, 200);
+  suspectButton1.strokeWeight = 0;
   suspectButton1.text = "   ";
   suspectButton1.onPress = function() {
     gameState = 'wrongsuspect'
     suspectButton1.locate(-500, -400);
+    suspectButton2.locate(-500, -400);
+    suspectButton3.locate(-500, -400);
   }
 
+  //Father
   suspectButton2 = new Clickable();
-  suspectButton2.image = clickImg;
+  suspectButton2.image = mySuspect2;
+  suspectButton2.fitImage = true;
+  suspectButton2.imageScale = 1.2;
   suspectButton2.locate(-400, -500);
-  suspectButton2.resize(150, 50);
+  suspectButton2.resize(150, 200);
+  suspectButton2.strokeWeight = 0;
   suspectButton2.text = "   ";
   suspectButton2.onPress = function() {
     gameState = 'wrongsuspect'
     suspectButton1.locate(-500, -400);
+    suspectButton2.locate(-500, -400);
+    suspectButton3.locate(-500, -400);
   }
 
+  //Mister.B (= Murderer)
   suspectButton3 = new Clickable();
-  suspectButton3.image = clickImg;
+  suspectButton3.image = mySuspect3;
+  suspectButton3.fitImage = true;
+  suspectButton3.imageScale = 1.2;
   suspectButton3.locate(-400, -500);
-  suspectButton3.resize(150, 50);
+  suspectButton3.resize(150, 200);
+  suspectButton3.strokeWeight = 0;
   suspectButton3.text = "   ";
   suspectButton3.onPress = function() {
     gameState = 'rightsuspect'
@@ -311,13 +415,15 @@ function PopUpScreen() {
 
 //This is the main page where a user can play the game.
 function mainScreen() {
-  background(200, 30, 30);
-  textAlign(CENTER);
-  textSize(25);
-  text('Hey! This will be the main page!', width * 0.5, height * 0.4);
+  background(0);
+  image(mainBackground, 0,175, 800, 450);
+  // textAlign(CENTER);
+  // textSize(25);
+  //text('Hey! This will be the main page!', width * 0.5, height * 0.4);
   mainButton();
 }
 
+//Duvet Clue
 function cluePopUp1() {
   push();
   rectMode(CENTER);
@@ -327,10 +433,12 @@ function cluePopUp1() {
   textSize(25);
   fill(255);
   text('Hey, You found the Clue 1. Congrats!!', width * 0.5, height * 0.35);
+  image(myClue1, 300, 350, 150, 100);
   pop();
   popUpButton();
 }
 
+//Calander Clue
 function cluePopUp2() {
   push();
   rectMode(CENTER);
@@ -340,10 +448,12 @@ function cluePopUp2() {
   textSize(25);
   fill(255);
   text('Hey, You found the Clue 2. Congrats!!', width * 0.5, height * 0.35);
+  image(myClue2, 300, 350, 150, 100);
   pop();
   popUpButton();
 }
 
+//Body Clue
 function cluePopUp3() {
   push();
   rectMode(CENTER);
@@ -353,11 +463,12 @@ function cluePopUp3() {
   textSize(25);
   fill(255);
   text('Hey, You found the Clue 3. Congrats!!', width * 0.5, height * 0.35);
-  image(clickImg, 300, 350, 150, 100)
+  image(myClue3, 300, 350, 150, 100);
   pop();
   popUpButton();
 }
 
+//Blood Clue
 function cluePopUp4() {
   push();
   rectMode(CENTER);
@@ -367,7 +478,37 @@ function cluePopUp4() {
   textSize(25);
   fill(255);
   text('Hey, You found the Clue 4. Congrats!!', width * 0.5, height * 0.35);
-  image(clickImg, 300, 350, 150, 100)
+  image(myClue4, 300, 350, 150, 100);
+  pop();
+  popUpButton();
+}
+
+//Phone Clue
+function cluePopUp5() {
+  push();
+  rectMode(CENTER);
+  fill(80, 210, 90);
+  rect(400, 400, 500, 500, 20);
+  textAlign(CENTER);
+  textSize(25);
+  fill(255);
+  text('Hey, You found the Clue 5. Congrats!!', width * 0.5, height * 0.35);
+  image(myClue5, 300, 350, 150, 100);
+  pop();
+  popUpButton();
+}
+
+//Paper Clue
+function cluePopUp6() {
+  push();
+  rectMode(CENTER);
+  fill(80, 210, 90);
+  rect(400, 400, 500, 500, 20);
+  textAlign(CENTER);
+  textSize(25);
+  fill(255);
+  text('Hey, You found the Clue 6. Congrats!!', width * 0.5, height * 0.35);
+  image(myClue6, 300, 350, 150, 100);
   pop();
   popUpButton();
 }
@@ -389,7 +530,7 @@ function wrongSuspectPopup() {
   textSize(20);
   fill(255);
   text('Hey, You guessed the wrong Suspect. Try Again!!', width * 0.5, height * 0.35);
-  image(clickImg, 300, 350, 150, 100)
+  image(clickImg, 300, 350, 150, 100);
   pop();
   wrongPopupButton();
 }
@@ -403,7 +544,7 @@ function endScreen() {
   textSize(20);
   fill(255);
   text('Hey, You got it! Congrats!', width * 0.5, height * 0.35);
-  image(clickImg, 300, 350, 150, 100)
+  image(clickImg, 300, 350, 150, 100);
   pop();
   gobacktoMainPageButton();
 }
