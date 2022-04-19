@@ -1,9 +1,9 @@
 var canvas;
 var click1;
 var click2;
-var click3;
+var clickClue1;
 var click4;
-// var click5;
+var click5;
 // var click6;
 var clickImg;
 
@@ -37,11 +37,14 @@ function draw() {
       break;
     case 'clue2':
       cluePopUp2();
+      break;
+    case 'clue3':
+      cluePopUp3();
   }
   // click6.draw();
-  // click5.draw();
+  click5.draw();
   click4.draw();
-  click3.draw();
+  clickClue1.draw();
   click2.draw();
   click1.draw();
 }
@@ -56,8 +59,9 @@ function popUpButton() {
 
 function mainButton() {
     click2.locate(-400,-500);
-    click3.locate(200,200);
+    clickClue1.locate(200,200);
     click4.locate(600,200);
+    click5.locate(600,600);
 }
 
 function InitialButton() {
@@ -77,7 +81,7 @@ function InitialButton() {
     //click2.image = clickImg;
     click2.locate(-400, -550);
     click2.resize(150,50);
-    //click2.color = "#FF20FF";
+    click2.color = "#FFFFFF";
     click2.cornerRadius = 0;
     click2.text = "Got It";
     click2.textScaled = true;
@@ -85,15 +89,16 @@ function InitialButton() {
         gameState = 'main'
       }
 
-    click3 = new Clickable();
-    click3.image = clickImg;
-    click3.locate(-400, -500);
-    click3.resize(150,50);
-    click3.text = "  ";
-      click3.onRelease = function () {
+    clickClue1 = new Clickable();
+    clickClue1.image = clickImg;
+    clickClue1.locate(-400, -500);
+    clickClue1.resize(150,50);
+    clickClue1.text = "  ";
+      clickClue1.onRelease = function () {
         gameState = 'clue1'
+        click5.locate(-400,-500);
         click4.locate(-400,-500);
-        click3.locate(-400,-500);
+        clickClue1.locate(-400,-500);
       }
 
     click4 = new Clickable();
@@ -103,9 +108,22 @@ function InitialButton() {
     click4.text = "   ";
       click4.onPress = function () {
         gameState = 'clue2'
+        click5.locate(-400,-500);
         click4.locate(-400,-500);
-        click3.locate(-400,-500);
+        clickClue1.locate(-400,-500);
       }
+
+      click5 = new Clickable();
+      click5.image = clickImg;
+      click5.locate(-400, -500);
+      click5.resize(150,50);
+      click5.text = "   ";
+        click5.onPress = function () {
+          gameState = 'clue3'
+          click5.locate(-400,-500);
+          click4.locate(-400,-500);
+          clickClue1.locate(-400,-500);
+        }
 }
 
 //This is the very first screen the user will see.
@@ -163,12 +181,26 @@ function cluePopUp1() {
 function cluePopUp2() {
   push();
   rectMode(CENTER);
-  fill(0);
+  fill(50,60,70);
   rect(400,400, 500,500,20);
   textAlign(CENTER);
   textSize(25);
   fill(255);
   text('Hey, You found the Clue 2. Congrats!!', width*0.5, height*0.35);
+  pop();
+  popUpButton();
+}
+
+function cluePopUp3() {
+  push();
+  rectMode(CENTER);
+  fill(25,40,30);
+  rect(400, 400, 500, 500, 20);
+  textAlign(CENTER);
+  textSize(25);
+  fill(255);
+  text('Hey, You found the Clue 3. Congrats!!', width*0.5, height*0.35);
+  image(clickImg,300,350,150,100)
   pop();
   popUpButton();
 }
