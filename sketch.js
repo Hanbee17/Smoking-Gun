@@ -19,6 +19,10 @@ var clickImg;
 var frontImage;
 var mainBackground;
 
+let myBgMusic1;
+// let myBgMusic2;
+// let myBgMusic3;
+
 let gameState = 'first';
 
 function preload() {
@@ -35,6 +39,11 @@ function preload() {
   mySuspect2 = loadImage('./assets/suspect2.png');
   mySuspect3 = loadImage('./assets/suspect3.png');
 
+  //Art of Slience by Uniq
+  myBgMusic1 = loadSound('./assets/bg1.mp3');
+  // myBgMusic2 = loadSound('./assets/bg2.png');
+  // myBgMusic3 = loadSound('./assets/bg3.png');
+
   // for (i = 0; i <= 5; i++) {
   //   myClue[i] = loadImage('./assets/clue+[i]+.png');
   // }
@@ -46,6 +55,25 @@ function setup() {
   background(0);
   InitialButton();
   titleScreen();
+}
+
+function keyPressed() {
+  if (keyCode == 32) {
+   Music();
+  } else if (keyCode === 13) {
+    PauseMusic();
+  }
+}
+
+function Music() {
+  // if (myBgMusic1.isPlaying() == false) {
+  // RanBgm = int(random(myBgMusic1.length));
+  // myBgMusic1 = myBgMusic1[RanBgm];
+  myBgMusic1.play();
+}
+
+function PauseMusic() {
+  myBgMusic1.pause();
 }
 
 function draw() {
