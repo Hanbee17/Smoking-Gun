@@ -13,11 +13,15 @@ var gobackbutton;
 var gobacktomainButton;
 
 var clickImg;
+var frontImage;
+var mainBackground;
 
 let gameState = 'first';
 
 function preload() {
   clickImg = loadImage('./logo.png');
+  frontImage = loadImage('./assets/1.png');
+  mainBackground = loadImage('./assets/2.png');
 }
 
 function setup() {
@@ -76,7 +80,7 @@ function draw() {
 }
 
 function startButton() {
-  firstClick.locate(300, 500);
+  firstClick.locate(100, 600);
 }
 
 function popUpButton() {
@@ -134,8 +138,8 @@ function gobacktoMainPageButton() {
 function InitialButton() {
   firstClick = new Clickable();
   //firstClick.image = clickImg;``
-  firstClick.locate(300, 500);
-  firstClick.resize(200, 100);
+  //firstClick.locate(200, 600);
+  firstClick.resize(150, 50);
   firstClick.color = "#FFFFFF";
   firstClick.cornerRadius = 0;
   firstClick.text = "Start";
@@ -277,12 +281,12 @@ function InitialButton() {
 
 //This is the very first screen the user will see.
 function titleScreen() {
-  background(100, 100, 240);
+  image(frontImage, 0,0, 800,800);
   textSize(75);
   textAlign(CENTER);
-  text('The Title', width * 0.5, height * 0.33);
-  textSize(25);
-  text('Hi, This is the very first page, Welcome!', width * 0.5, height * 0.4);
+  //text('The Smoking Gun', width * 0.5, height * 0.33);
+  //textSize(25);
+  //text('Hi, This is the very first page, Welcome!', width * 0.5, height * 0.4);
   startButton();
 }
 
