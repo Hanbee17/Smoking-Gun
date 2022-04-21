@@ -7,3 +7,9 @@ canvas {
   margin: auto;
   padding: 50px
 }
+
+clickClue1 {
+  border: none;
+  background-color: transparent;
+  margin: auto;
+}

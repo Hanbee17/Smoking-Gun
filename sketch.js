@@ -25,6 +25,8 @@ let myBgMusic1;
 
 let gameState = 'first';
 
+let clueCount = 0;
+
 function preload() {
   clickImg = loadImage('./logo.png');
   frontImage = loadImage('./assets/1.png');
@@ -133,6 +135,7 @@ function draw() {
 
 function startButton() {
   firstClick.locate(100, 600);
+  popUpClick.locate(-325, -530);
 }
 
 function popUpButton() {
@@ -156,13 +159,10 @@ function mainButton() {
   //paper
   clickClue6.locate(220, 420);
 
+if (clueCount > 4) {
   clickGuess.locate(600, 50);
+    }
 
-//   if (gameState == 'clue1') {
-//   clickGuess.locate(600, 50);
-// } else {
-//   clickGuess.locate(-600, -500);
-// }
 }
 
 function lastPageButton() {
@@ -178,6 +178,8 @@ function lastPageButton() {
   suspectButton3.locate(550, 400);
   suspectButton2.locate(350, 400);
   suspectButton1.locate(150, 400);
+
+  popUpClick.locate(330, 650);
 }
 
 function wrongPopupButton() {
@@ -204,12 +206,11 @@ function InitialButton() {
   firstClick = new Clickable();
   //firstClick.image = clickImg;``
   firstClick.resize(150, 50);
-  firstClick.color = "#FFFFFF";
+  firstClick.color = "#00000000";
   firstClick.cornerRadius = 0;
   firstClick.strokeWeight = 0;
-  firstClick.stroke = "#000000";
-  firstClick.text = "Start";
-  firstClick.textColor = "#000000";
+  firstClick.text = "Case 1";
+  firstClick.textColor = "#FFFFFF";
   firstClick.textSize = 25;
   //firstClick.textFont = "sans-serif";
   firstClick.textScaled = true;
@@ -223,7 +224,7 @@ function InitialButton() {
   popUpClick.resize(150, 50);
   popUpClick.color = "#FFFFFF";
   popUpClick.cornerRadius = 0;
-  popUpClick.text = "Got It";
+  popUpClick.text = "Go Back to Play";
   popUpClick.textScaled = true;
   popUpClick.onRelease = function() {
     gameState = 'main'
@@ -231,10 +232,12 @@ function InitialButton() {
 
   //duvet
   clickClue1 = new Clickable();
-  clickClue1.image = clickImg;
+  //clickClue1.image = clickImg;
   clickClue1.locate(-400, -500);
   clickClue1.resize(50, 50);
   clickClue1.text = "  ";
+  clickClue1.color = "#00000000";
+  clickClue1.strokeWeight = 0;
   clickClue1.onRelease = function() {
     gameState = 'clue1'
     clickClue6.locate(-400, -500);
@@ -244,14 +247,17 @@ function InitialButton() {
     clickClue3.locate(-400, -500);
     clickClue2.locate(-400, -500);
     clickClue1.locate(-400, -500);
+    clueCount ++
   }
 
   //calander
   clickClue2 = new Clickable();
-  clickClue2.image = clickImg;
+  //clickClue2.image = clickImg;
   clickClue2.locate(-400, -500);
   clickClue2.resize(100, 120);
   clickClue2.text = "   ";
+  clickClue2.color = "#00000000";
+  clickClue2.strokeWeight = 0;
   clickClue2.onPress = function() {
     gameState = 'clue2'
     clickClue6.locate(-400, -500);
@@ -260,14 +266,17 @@ function InitialButton() {
     clickClue3.locate(-400, -500);
     clickClue2.locate(-400, -500);
     clickClue1.locate(-400, -500);
+    clueCount ++
   }
 
   //body
   clickClue3 = new Clickable();
-  clickClue3.image = clickImg;
+  //clickClue3.image = clickImg;
   clickClue3.locate(-400, -500);
   clickClue3.resize(150, 150);
   clickClue3.text = "   ";
+  clickClue3.color = "#00000000";
+  clickClue3.strokeWeight = 0;
   clickClue3.onPress = function() {
     gameState = 'clue3'
     clickClue6.locate(-400, -500);
@@ -276,14 +285,17 @@ function InitialButton() {
     clickClue3.locate(-400, -500);
     clickClue2.locate(-400, -500);
     clickClue1.locate(-400, -500);
+    clueCount ++
   }
 
   //blood
   clickClue4 = new Clickable();
-  clickClue4.image = clickImg;
+  //clickClue4.image = clickImg;
   clickClue4.locate(-400, -500);
   clickClue4.resize(40, 150);
   clickClue4.text = "   ";
+  clickClue4.color = "#00000000";
+  clickClue4.strokeWeight = 0;
   clickClue4.onPress = function() {
     gameState = 'clue4'
     clickClue6.locate(-400, -500);
@@ -292,14 +304,17 @@ function InitialButton() {
     clickClue3.locate(-400, -500);
     clickClue2.locate(-400, -500);
     clickClue1.locate(-400, -500);
+    clueCount ++
   }
 
   //phone
   clickClue5 = new Clickable();
-  clickClue5.image = clickImg;
+  //clickClue5.image = clickImg;
   clickClue5.locate(-400, -500);
   clickClue5.resize(30, 40);
   clickClue5.text = "   ";
+  clickClue5.color = "#00000000";
+  clickClue5.strokeWeight = 0;
   clickClue5.onPress = function() {
     gameState = 'clue5'
     clickClue6.locate(-400, -500);
@@ -308,14 +323,17 @@ function InitialButton() {
     clickClue3.locate(-400, -500);
     clickClue2.locate(-400, -500);
     clickClue1.locate(-400, -500);
+    clueCount ++
   }
 
   //paper
   clickClue6 = new Clickable();
-  clickClue6.image = clickImg;
+  //clickClue6.image = clickImg;
   clickClue6.locate(-400, -500);
   clickClue6.resize(40, 40);
   clickClue6.text = "   ";
+  clickClue6.color = "#00000000";
+  clickClue6.strokeWeight = 0;
   clickClue6.onPress = function() {
     gameState = 'clue6'
     clickClue6.locate(-400, -500);
@@ -324,13 +342,17 @@ function InitialButton() {
     clickClue3.locate(-400, -500);
     clickClue2.locate(-400, -500);
     clickClue1.locate(-400, -500);
+    clueCount ++
   }
 
   clickGuess = new Clickable();
-  clickGuess.image = clickImg;
+  //clickGuess.image = clickImg;
   clickGuess.locate(-400, -500);
   clickGuess.resize(150, 50);
-  clickGuess.text = "   ";
+  clickGuess.text = "Let's Guess the Suspect!";
+  popUpClick.textScaled = true;
+  //clickGuess.color = "#00000000";
+  clickGuess.strokeWeight = 0;
   clickGuess.onPress = function() {
     gameState = 'suspectScreen'
     clickGuess.locate(-400, -500);
