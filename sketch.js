@@ -161,6 +161,15 @@ function DescriptionPopUpScreen() {
 function mainScreen() {
   background(0);
   image(mainBackground, 0, 175, 800, 450);
+  // push();
+  // textAlign(CENTER);
+  // textSize(16);
+  // textFont('Verdana');
+  // fill(73,80,87);
+  // text('Click the suspicious areas to find clues.', 194, 70);
+  // text('Press "Sapce" to play music.', 150, 90);
+  // text('Press "Enter" to stop music.', 148, 110);
+  // pop();
   mainButton();
 }
 
@@ -214,17 +223,19 @@ function cluePopUp3() {
   fill(33, 37, 41);
   rect(400, 400, 500, 500);
   textAlign(CENTER);
-  textSize(20);
+  textSize(18);
   textFont('Verdana');
   fill(206, 212, 218);
-  text('Clue #3', 400, 310);
-  text('This body is really decomposed..', 400, 340);
-  text('According to the autopsy report,', 400, 370);
-  text('it is estimated that the body is 3-4 days old,', 400, 400);
-  text('and bloating has been progressed.', 400, 430);
-  text('The victim was stabbed to death', 400, 460);
-  text('in the left chest, abdomen and left arm,', 400, 490);
-  text('and the weapon is presumed to be excessive.', 400, 520);
+  text('Clue #3', 400, 300);
+  text('This body is really decomposed..', 400, 330);
+  text('According to the autopsy report,', 400, 360);
+  text('it is estimated that the body is 3-4 days old,', 400, 390);
+  text('and bloating has been progressed.', 400, 420);
+  text('The victim was stabbed to death', 400, 450);
+  text('in the left chest, abdomen and left arm,', 400, 480);
+  text('and the weapon is presumed to be a fruit knife.', 400, 510);
+  text('Since the body was not wearing shoes, it is likely', 400, 540);
+  text('that he took off his shoes and entered the house.', 400, 570);
   imageMode(CENTER);
   image(myClue3, 400, 230, 140, 140);
   pop();
@@ -307,7 +318,7 @@ function cluePopUp6() {
 function boyPopup() {
   push();
   rectMode(CENTER);
-  fill(173, 181, 189);
+  fill(108, 117, 125);
   rect(400, 400, 500, 500);
   textAlign(CENTER);
   textSize(20);
@@ -331,7 +342,7 @@ function boyPopup() {
 function fatherPopup() {
   push();
   rectMode(CENTER);
-  fill(173, 181, 189);
+  fill(108, 117, 125);
   rect(400, 400, 500, 500);
   textAlign(CENTER);
   textSize(20);
@@ -355,7 +366,7 @@ function fatherPopup() {
 function manPopup() {
   push();
   rectMode(CENTER);
-  fill(173, 181, 189);
+  fill(108, 117, 125);
   rect(400, 400, 500, 500);
   textAlign(CENTER);
   textSize(20);

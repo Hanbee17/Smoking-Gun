@@ -36,7 +36,7 @@ function secondButton() {
 function popUpButton() {
   firstClick.locate(-400, -500);
   secondClick.locate(-400, -500);
-  popUpClick.locate(325, 580);
+  popUpClick.locate(325, 590);
 }
 
 function mainButton() {
@@ -79,7 +79,7 @@ if (clue5Count == 0) {
 
 if (clue2Count == 0) {
   clickGuess.locate(-600, -500);
-} else if (clue2Count == 1) {
+} else if (clue2Count > 0 && clue6Count > 0) {
   clickGuess.locate(600, 50);
 }
 
@@ -132,8 +132,8 @@ function InitialButton() {
   firstClick.color = "#00000000";
   firstClick.strokeWeight = 0;
   firstClick.text = "CASE 1";
-  firstClick.textColor = "#CED4DA";
-  firstClick.textSize = 25;
+  firstClick.textColor = "#ADB5BD";
+  firstClick.textSize = 28;
   firstClick.textFont = "Verdana";
   firstClick.textScaled = true;
   firstClick.onRelease = function() {
@@ -284,6 +284,7 @@ function InitialButton() {
 
 //Boy Button
   boyButton = new Clickable();
+  boyButton.color = "#ADB5BD";
   boyButton.image = mySuspect1;
   boyButton.fitImage = true;
   boyButton.imageScale = 1.2;
@@ -304,6 +305,7 @@ function InitialButton() {
 
 //Father Button
 fatherButton = new Clickable();
+fatherButton.color = "#ADB5BD";
 fatherButton.image = mySuspect2;
 fatherButton.fitImage = true;
 fatherButton.imageScale = 1.2;
@@ -324,6 +326,7 @@ fatherButton.onPress = function() {
 
 //Man Button
 manButton = new Clickable();
+manButton.color = "#ADB5BD";
 manButton.image = mySuspect3;
 manButton.fitImage = true;
 manButton.imageScale = 1.2;

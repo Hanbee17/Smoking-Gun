@@ -1,15 +1,23 @@
 html, body {
-  margin: 0;
-  padding: 0;
 }
 canvas {
   display: block;
   margin: auto;
-  padding: 50px
+  padding-top: 50px;
 }
 
-clickClue1 {
-  border: none;
-  background-color: transparent;
+p{
+  font-family: verdana;
+  font-size: 14px;
+  color: grey;
+  display: block;
+  margin: auto;
+  padding-top: 10px;
+  padding: 3px;
+}
+
+.text-holder {
+  width: 800px;
+  height: auto;
   margin: auto;
 }
