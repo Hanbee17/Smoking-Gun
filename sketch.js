@@ -1,5 +1,3 @@
-let textDes = 'On Septmeber, 2009....'
-
 var frontImage;
 var mainBackground;
 
@@ -7,8 +5,12 @@ let myBgMusic;
 
 let gameState = 'first';
 
-let clueCount = 0;
+let clue1Count = 0;
+let clue2Count = 0;
+let clue3Count = 0;
+//let clue4Count = 0;
 let clue5Count = 0;
+let clue6Count = 0;
 
 //Load Assets
 function preload() {
@@ -31,7 +33,6 @@ function preload() {
 
 function setup() {
   createCanvas(800, 800);
-  frameRate(60);
   background(0);
   InitialButton();
   titleScreen();
@@ -47,10 +48,12 @@ function keyPressed() {
 }
 
 function Music() {
-  // if (myBgMusic.isPlaying() == false) {
-  // RanBgm = int(random(myBgMusic.length));
-  // myBgMusic = myBgMusic[RanBgm];
+  if (myBgMusic.isPlaying() == false) {
+  //RanBgm = int(random(myBgMusic.length));
+  //myBgMusic = myBgMusic[RanBgm];
   myBgMusic.play();
+}
+ myBgMusic.loop();
 }
 
 function PauseMusic() {
@@ -132,8 +135,6 @@ function draw() {
 //This is the very first screen the user will see.
 function titleScreen() {
   image(frontImage, 0, 0, 800, 800);
-  textSize(75);
-  textAlign(CENTER);
   startButton();
 }
 
@@ -144,14 +145,14 @@ function DescriptionPopUpScreen() {
   fill(0);
   rect(400, 400, 500, 500);
   textAlign(CENTER);
-  textSize(45);
-  fill(214, 40, 40);
-  //text('TRIGGER WARNING', width * 0.5, height * 0.35);
-  textSize(25);
-  fill(255);
-  text(textDes, 400, 300, 300, 200);
-  // text('material that may be harmful or', width * 0.5, height * 0.5);
-  // text('traumatizing to some audiences.', width * 0.5, height * 0.55);
+  textSize(20);
+  textFont('Verdana');
+  fill(206,212,218);
+  text('The first case is', 400, 300, 300, 200);
+  text('“corporal cohabitation case”.', 400, 325, 300, 200);
+  text('One day in September 2009,', 400, 350, 300, 200);
+  text('when the father returned home from 5 days of a business trip,', 400, 375, 300, 200);
+  text('what he found was a very strange stench and the appearance of his son eating his meal. According to the father, the intial reporter, the son was eating next to a decomposed body.', 400, 449, 300, 200);
   pop();
   secondButton();
 }
@@ -167,13 +168,18 @@ function mainScreen() {
 function cluePopUp1() {
   push();
   rectMode(CENTER);
-  fill(0);
-  rect(400, 400, 500, 500, 20);
+  fill(33,37,41);
+  rect(400, 400, 500, 500);
   textAlign(CENTER);
-  textSize(25);
-  fill(255);
-  text('Hey, You found the Clue 1. Congrats!!', width * 0.5, height * 0.35);
-  image(myClue1, 300, 350, 150, 100);
+  textSize(20);
+  textFont('Verdana');
+  fill(206,212,218);
+  text('Clue #1', 400, 330);
+  text('There is blood on a duvet...', 400, 360);
+  text('Why is it folded?',400, 390);
+  text('Was the suspect 1 tring to hide the evidence?',400, 420);
+  imageMode(CENTER);
+  image(myClue1, 400, 230, 192, 192);
   pop();
   popUpButton();
 }
@@ -268,6 +274,7 @@ function boyPopup() {
   popUpButton();
 }
 
+//father Description
 function fatherPopup() {
   push();
   rectMode(CENTER);
@@ -282,6 +289,7 @@ function fatherPopup() {
   popUpButton();
 }
 
+//man Description
 function manPopup() {
   push();
   rectMode(CENTER);
