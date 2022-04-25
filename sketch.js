@@ -49,11 +49,11 @@ function keyPressed() {
 
 function Music() {
   if (myBgMusic.isPlaying() == false) {
-  //RanBgm = int(random(myBgMusic.length));
-  //myBgMusic = myBgMusic[RanBgm];
-  myBgMusic.play();
-}
- myBgMusic.loop();
+    //RanBgm = int(random(myBgMusic.length));
+    //myBgMusic = myBgMusic[RanBgm];
+    myBgMusic.play();
+  }
+  myBgMusic.loop();
 }
 
 function PauseMusic() {
@@ -96,7 +96,7 @@ function draw() {
       fatherPopup();
       break;
     case 'foundMan':
-      ManPopup();
+      manPopup();
       break;
     case 'suspectScreen':
       guessScreen();
@@ -142,12 +142,12 @@ function titleScreen() {
 function DescriptionPopUpScreen() {
   push();
   rectMode(CENTER);
-  fill(33,37,41);
+  fill(33, 37, 41);
   rect(400, 400, 500, 500);
   textAlign(CENTER);
   textSize(20);
   textFont('Verdana');
-  fill(206,212,218);
+  fill(206, 212, 218);
   text('The first case is', 400, 300, 300, 200);
   text('“corporal cohabitation case”.', 400, 325, 300, 200);
   text('One day in September 2009,', 400, 350, 300, 200);
@@ -168,18 +168,18 @@ function mainScreen() {
 function cluePopUp1() {
   push();
   rectMode(CENTER);
-  fill(33,37,41);
+  fill(33, 37, 41);
   rect(400, 400, 500, 500);
   textAlign(CENTER);
   textSize(20);
   textFont('Verdana');
-  fill(206,212,218);
+  fill(206, 212, 218);
   text('Clue #1', 400, 330);
   text('There is blood on a duvet...', 400, 360);
-  text('Why is it folded?',400, 390);
-  text('Was the suspect 1 tring to hide the evidence?',400, 420);
-  text('Test results showed that',400, 450);
-  text('the blood belonged to the victim.',400, 480);
+  text('Why is it folded?', 400, 390);
+  text('Was the suspect 1 tring to hide the evidence?', 400, 420);
+  text('Test results showed that', 400, 450);
+  text('the blood belonged to the victim.', 400, 480);
   imageMode(CENTER);
   image(myClue1, 400, 230, 192, 192);
   pop();
@@ -191,16 +191,16 @@ function cluePopUp1() {
 function cluePopUp2() {
   push();
   rectMode(CENTER);
-  fill(33,37,41);
+  fill(33, 37, 41);
   rect(400, 400, 500, 500);
   textAlign(CENTER);
   textSize(20);
   textFont('Verdana');
-  fill(206,212,218);
+  fill(206, 212, 218);
   text('Clue #2', 400, 330);
   text('This calander is torn apart...', 400, 360);
-  text('Where would be the broken peice of paper?',400, 390);
-  text('',400, 420);
+  text('Where would be the broken peice of paper?', 400, 390);
+  text('', 400, 420);
   imageMode(CENTER);
   image(myClue2, 400, 230, 140, 140);
   pop();
@@ -211,20 +211,20 @@ function cluePopUp2() {
 function cluePopUp3() {
   push();
   rectMode(CENTER);
-  fill(33,37,41);
+  fill(33, 37, 41);
   rect(400, 400, 500, 500);
   textAlign(CENTER);
   textSize(20);
   textFont('Verdana');
-  fill(206,212,218);
+  fill(206, 212, 218);
   text('Clue #3', 400, 310);
   text('This body is really decomposed..', 400, 340);
-  text('According to the autopsy report,',400, 370);
-  text('it is estimated that the body is 3-4 days old,',400, 400);
-  text('and bloating has been progressed.',400, 430);
-  text('The victim was stabbed to death',400, 460);
-  text('in the left chest, abdomen and left arm,',400, 490);
-  text('and the weapon is presumed to be excessive.',400, 520);
+  text('According to the autopsy report,', 400, 370);
+  text('it is estimated that the body is 3-4 days old,', 400, 400);
+  text('and bloating has been progressed.', 400, 430);
+  text('The victim was stabbed to death', 400, 460);
+  text('in the left chest, abdomen and left arm,', 400, 490);
+  text('and the weapon is presumed to be excessive.', 400, 520);
   imageMode(CENTER);
   image(myClue3, 400, 230, 140, 140);
   pop();
@@ -235,20 +235,20 @@ function cluePopUp3() {
 function cluePopUp4() {
   push();
   rectMode(CENTER);
-  fill(33,37,41);
+  fill(33, 37, 41);
   rect(400, 400, 500, 500);
   textAlign(CENTER);
   textSize(20);
   textFont('Verdana');
-  fill(206,212,218);
+  fill(206, 212, 218);
   text('Clue #4', 400, 310);
   text('This body is really decomposed..', 400, 340);
-  text('According to the autopsy report,',400, 370);
-  text('it is estimated that the body is 3-4 days old,',400, 400);
-  text('and bloating has been progressed.',400, 430);
-  text('The victim was stabbed to death',400, 460);
-  text('in the left chest, abdomen and left arm,',400, 490);
-  text('and the weapon is presumed to be excessive.',400, 520);
+  text('According to the autopsy report,', 400, 370);
+  text('it is estimated that the body is 3-4 days old,', 400, 400);
+  text('and bloating has been progressed.', 400, 430);
+  text('The victim was stabbed to death', 400, 460);
+  text('in the left chest, abdomen and left arm,', 400, 490);
+  text('and the weapon is presumed to be excessive.', 400, 520);
   imageMode(CENTER);
   image(myClue4, 400, 230, 140, 140);
   pop();
@@ -259,20 +259,20 @@ function cluePopUp4() {
 function cluePopUp5() {
   push();
   rectMode(CENTER);
-  fill(33,37,41);
+  fill(33, 37, 41);
   rect(400, 400, 500, 500);
   textAlign(CENTER);
   textSize(20);
   textFont('Verdana');
-  fill(206,212,218);
+  fill(206, 212, 218);
   text('Clue #5', 400, 310);
   text('This body is really decomposed..', 400, 340);
-  text('According to the autopsy report,',400, 370);
-  text('it is estimated that the body is 3-4 days old,',400, 400);
-  text('and bloating has been progressed.',400, 430);
-  text('The victim was stabbed to death',400, 460);
-  text('in the left chest, abdomen and left arm,',400, 490);
-  text('and the weapon is presumed to be excessive.',400, 520);
+  text('According to the autopsy report,', 400, 370);
+  text('it is estimated that the body is 3-4 days old,', 400, 400);
+  text('and bloating has been progressed.', 400, 430);
+  text('The victim was stabbed to death', 400, 460);
+  text('in the left chest, abdomen and left arm,', 400, 490);
+  text('and the weapon is presumed to be excessive.', 400, 520);
   imageMode(CENTER);
   image(myClue5, 400, 230, 140, 140);
   pop();
@@ -283,20 +283,20 @@ function cluePopUp5() {
 function cluePopUp6() {
   push();
   rectMode(CENTER);
-  fill(33,37,41);
+  fill(33, 37, 41);
   rect(400, 400, 500, 500);
   textAlign(CENTER);
   textSize(20);
   textFont('Verdana');
-  fill(206,212,218);
+  fill(206, 212, 218);
   text('Clue #6', 400, 310);
   text('This body is really decomposed..', 400, 340);
-  text('According to the autopsy report,',400, 370);
-  text('it is estimated that the body is 3-4 days old,',400, 400);
-  text('and bloating has been progressed.',400, 430);
-  text('The victim was stabbed to death',400, 460);
-  text('in the left chest, abdomen and left arm,',400, 490);
-  text('and the weapon is presumed to be excessive.',400, 520);
+  text('According to the autopsy report,', 400, 370);
+  text('it is estimated that the body is 3-4 days old,', 400, 400);
+  text('and bloating has been progressed.', 400, 430);
+  text('The victim was stabbed to death', 400, 460);
+  text('in the left chest, abdomen and left arm,', 400, 490);
+  text('and the weapon is presumed to be excessive.', 400, 520);
   imageMode(CENTER);
   image(myClue6, 400, 230, 140, 140);
   pop();
@@ -312,15 +312,15 @@ function boyPopup() {
   textAlign(CENTER);
   textSize(20);
   textFont('Verdana');
-  fill(52,58,64);
+  fill(52, 58, 64);
   text('Suspect #1', 400, 310);
   text('This body is really decomposed..', 400, 340);
-  text('According to the autopsy report,',400, 370);
-  text('it is estimated that the body is 3-4 days old,',400, 400);
-  text('and bloating has been progressed.',400, 430);
-  text('The victim was stabbed to death',400, 460);
-  text('in the left chest, abdomen and left arm,',400, 490);
-  text('and the weapon is presumed to be excessive.',400, 520);
+  text('According to the autopsy report,', 400, 370);
+  text('it is estimated that the body is 3-4 days old,', 400, 400);
+  text('and bloating has been progressed.', 400, 430);
+  text('The victim was stabbed to death', 400, 460);
+  text('in the left chest, abdomen and left arm,', 400, 490);
+  text('and the weapon is presumed to be excessive.', 400, 520);
   imageMode(CENTER);
   image(mySuspect1, 400, 230, 140, 140);
   pop();
@@ -336,15 +336,15 @@ function fatherPopup() {
   textAlign(CENTER);
   textSize(20);
   textFont('Verdana');
-  fill(52,58,64);
+  fill(52, 58, 64);
   text('Suspect #2', 400, 310);
   text('This body is really decomposed..', 400, 340);
-  text('According to the autopsy report,',400, 370);
-  text('it is estimated that the body is 3-4 days old,',400, 400);
-  text('and bloating has been progressed.',400, 430);
-  text('The victim was stabbed to death',400, 460);
-  text('in the left chest, abdomen and left arm,',400, 490);
-  text('and the weapon is presumed to be excessive.',400, 520);
+  text('According to the autopsy report,', 400, 370);
+  text('it is estimated that the body is 3-4 days old,', 400, 400);
+  text('and bloating has been progressed.', 400, 430);
+  text('The victim was stabbed to death', 400, 460);
+  text('in the left chest, abdomen and left arm,', 400, 490);
+  text('and the weapon is presumed to be excessive.', 400, 520);
   imageMode(CENTER);
   image(mySuspect2, 400, 230, 140, 140);
   pop();
@@ -360,15 +360,15 @@ function manPopup() {
   textAlign(CENTER);
   textSize(20);
   textFont('Verdana');
-  fill(52,58,64);
+  fill(52, 58, 64);
   text('Suspect #3', 400, 310);
   text('This body is really decomposed..', 400, 340);
-  text('According to the autopsy report,',400, 370);
-  text('it is estimated that the body is 3-4 days old,',400, 400);
-  text('and bloating has been progressed.',400, 430);
-  text('The victim was stabbed to death',400, 460);
-  text('in the left chest, abdomen and left arm,',400, 490);
-  text('and the weapon is presumed to be excessive.',400, 520);
+  text('According to the autopsy report,', 400, 370);
+  text('it is estimated that the body is 3-4 days old,', 400, 400);
+  text('and bloating has been progressed.', 400, 430);
+  text('The victim was stabbed to death', 400, 460);
+  text('in the left chest, abdomen and left arm,', 400, 490);
+  text('and the weapon is presumed to be excessive.', 400, 520);
   imageMode(CENTER);
   image(mySuspect3, 400, 230, 140, 140);
   pop();
@@ -377,10 +377,12 @@ function manPopup() {
 
 //Guess Suspect Screen
 function guessScreen() {
-  background(245, 230, 30);
+  background(33, 37, 41);
   textAlign(CENTER);
   textSize(25);
-  text('Hey! This will be the guessing page!', width * 0.5, height * 0.3);
+  textFont('Verdana');
+  fill(255);
+  text('Click the most suspicious murderer.', 400, 100);
   lastPageButton();
 }
 
@@ -388,13 +390,13 @@ function guessScreen() {
 function wrongSuspectPopup() {
   push();
   rectMode(CENTER);
-  fill(80, 210, 90);
-  rect(400, 400, 500, 500, 20);
+  fill(173, 181, 189);
+  rect(400, 400, 500, 500);
   textAlign(CENTER);
   textSize(20);
-  fill(255);
-  text('Hey, You guessed the wrong Suspect. Try Again!!', width * 0.5, height * 0.35);
-  image(clickImg, 300, 350, 150, 100);
+  textFont('Verdana');
+  fill(52, 58, 64);
+  text('This suspect is not a murderer.', 400, 310);
   pop();
   wrongPopupButton();
 }
@@ -403,13 +405,14 @@ function wrongSuspectPopup() {
 function endScreen() {
   push();
   rectMode(CENTER);
-  fill(80, 210, 90);
-  rect(400, 400, 500, 500, 20);
+  fill(173, 181, 189);
+  rect(400, 400, 500, 500);
   textAlign(CENTER);
   textSize(20);
-  fill(255);
-  text('Hey, You got it! Congrats!', width * 0.5, height * 0.35);
-  image(clickImg, 300, 350, 150, 100);
+  textFont('Verdana');
+  fill(52, 58, 64);
+  text('Congratulation!', 400, 280);
+  text('This suspect is a murderer.', 400, 310);
   pop();
   gobacktoMainPageButton();
 }
