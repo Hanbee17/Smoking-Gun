@@ -36,7 +36,7 @@ function secondButton() {
 function popUpButton() {
   firstClick.locate(-400, -500);
   secondClick.locate(-400, -500);
-  popUpClick.locate(325, 550);
+  popUpClick.locate(325, 580);
 }
 
 function mainButton() {
@@ -59,13 +59,13 @@ function mainButton() {
 if (clue1Count == 0) {
     boyButton.locate(-500, -650);
   } else if (clue1Count == 1) {
-    boyButton.locate(100, 650);
+    boyButton.locate(200, 650);
   }
 
 if (clue3Count == 0) {
     fatherButton.locate(-500, -650);
   } else if (clue3Count == 1) {
-    fatherButton.locate(300, 650);
+    fatherButton.locate(350, 650);
   }
 
 if (clue5Count == 0) {
@@ -281,7 +281,7 @@ function InitialButton() {
   boyButton.fitImage = true;
   boyButton.imageScale = 1.2;
   boyButton.locate(-400, -500);
-  boyButton.resize(150, 200);
+  boyButton.resize(100, 130);
   boyButton.strokeWeight = 00;
   boyButton.text = "   ";
   boyButton.onPress = function() {
@@ -301,7 +301,7 @@ fatherButton.image = mySuspect2;
 fatherButton.fitImage = true;
 fatherButton.imageScale = 1.2;
 fatherButton.locate(-400, -500);
-fatherButton.resize(150, 200);
+fatherButton.resize(100, 130);
 fatherButton.strokeWeight = 00;
 fatherButton.text = "   ";
 fatherButton.onPress = function() {
@@ -317,11 +317,11 @@ fatherButton.onPress = function() {
 
 //Man Button
 manButton = new Clickable();
-manButton.image = mySuspect2;
+manButton.image = mySuspect3;
 manButton.fitImage = true;
 manButton.imageScale = 1.2;
 manButton.locate(-400, -500);
-manButton.resize(150, 200);
+manButton.resize(100, 130);
 manButton.strokeWeight = 00;
 manButton.text = "   ";
 manButton.onPress = function() {

@@ -142,7 +142,7 @@ function titleScreen() {
 function DescriptionPopUpScreen() {
   push();
   rectMode(CENTER);
-  fill(0);
+  fill(33,37,41);
   rect(400, 400, 500, 500);
   textAlign(CENTER);
   textSize(20);
@@ -178,6 +178,8 @@ function cluePopUp1() {
   text('There is blood on a duvet...', 400, 360);
   text('Why is it folded?',400, 390);
   text('Was the suspect 1 tring to hide the evidence?',400, 420);
+  text('Test results showed that',400, 450);
+  text('the blood belonged to the victim.',400, 480);
   imageMode(CENTER);
   image(myClue1, 400, 230, 192, 192);
   pop();
@@ -185,16 +187,22 @@ function cluePopUp1() {
 }
 
 //Calander Clue
+//make connection to clue 6(paper) and make the guess button pop up
 function cluePopUp2() {
   push();
   rectMode(CENTER);
-  fill(50, 60, 70);
-  rect(400, 400, 500, 500, 20);
+  fill(33,37,41);
+  rect(400, 400, 500, 500);
   textAlign(CENTER);
-  textSize(25);
-  fill(255);
-  text('Hey, You found the Clue 2. Congrats!!', width * 0.5, height * 0.35);
-  image(myClue2, 300, 350, 150, 100);
+  textSize(20);
+  textFont('Verdana');
+  fill(206,212,218);
+  text('Clue #2', 400, 330);
+  text('This calander is torn apart...', 400, 360);
+  text('Where would be the broken peice of paper?',400, 390);
+  text('',400, 420);
+  imageMode(CENTER);
+  image(myClue2, 400, 230, 140, 140);
   pop();
   popUpButton();
 }
@@ -203,13 +211,22 @@ function cluePopUp2() {
 function cluePopUp3() {
   push();
   rectMode(CENTER);
-  fill(25, 40, 30);
-  rect(400, 400, 500, 500, 20);
+  fill(33,37,41);
+  rect(400, 400, 500, 500);
   textAlign(CENTER);
-  textSize(25);
-  fill(255);
-  text('Hey, You found the Clue 3. Congrats!!', width * 0.5, height * 0.35);
-  image(myClue3, 300, 350, 150, 100);
+  textSize(20);
+  textFont('Verdana');
+  fill(206,212,218);
+  text('Clue #3', 400, 310);
+  text('This body is really decomposed..', 400, 340);
+  text('According to the autopsy report,',400, 370);
+  text('it is estimated that the body is 3-4 days old,',400, 400);
+  text('and bloating has been progressed.',400, 430);
+  text('The victim was stabbed to death',400, 460);
+  text('in the left chest, abdomen and left arm,',400, 490);
+  text('and the weapon is presumed to be excessive.',400, 520);
+  imageMode(CENTER);
+  image(myClue3, 400, 230, 140, 140);
   pop();
   popUpButton();
 }
@@ -218,13 +235,22 @@ function cluePopUp3() {
 function cluePopUp4() {
   push();
   rectMode(CENTER);
-  fill(80, 210, 90);
-  rect(400, 400, 500, 500, 20);
+  fill(33,37,41);
+  rect(400, 400, 500, 500);
   textAlign(CENTER);
-  textSize(25);
-  fill(255);
-  text('Hey, You found the Clue 4. Congrats!!', width * 0.5, height * 0.35);
-  image(myClue4, 300, 350, 150, 100);
+  textSize(20);
+  textFont('Verdana');
+  fill(206,212,218);
+  text('Clue #4', 400, 310);
+  text('This body is really decomposed..', 400, 340);
+  text('According to the autopsy report,',400, 370);
+  text('it is estimated that the body is 3-4 days old,',400, 400);
+  text('and bloating has been progressed.',400, 430);
+  text('The victim was stabbed to death',400, 460);
+  text('in the left chest, abdomen and left arm,',400, 490);
+  text('and the weapon is presumed to be excessive.',400, 520);
+  imageMode(CENTER);
+  image(myClue4, 400, 230, 140, 140);
   pop();
   popUpButton();
 }
@@ -233,13 +259,22 @@ function cluePopUp4() {
 function cluePopUp5() {
   push();
   rectMode(CENTER);
-  fill(80, 210, 90);
-  rect(400, 400, 500, 500, 20);
+  fill(33,37,41);
+  rect(400, 400, 500, 500);
   textAlign(CENTER);
-  textSize(25);
-  fill(255);
-  text('Hey, You found the Clue 5. Congrats!!', width * 0.5, height * 0.35);
-  image(myClue5, 300, 350, 150, 100);
+  textSize(20);
+  textFont('Verdana');
+  fill(206,212,218);
+  text('Clue #5', 400, 310);
+  text('This body is really decomposed..', 400, 340);
+  text('According to the autopsy report,',400, 370);
+  text('it is estimated that the body is 3-4 days old,',400, 400);
+  text('and bloating has been progressed.',400, 430);
+  text('The victim was stabbed to death',400, 460);
+  text('in the left chest, abdomen and left arm,',400, 490);
+  text('and the weapon is presumed to be excessive.',400, 520);
+  imageMode(CENTER);
+  image(myClue5, 400, 230, 140, 140);
   pop();
   popUpButton();
 }
@@ -248,13 +283,22 @@ function cluePopUp5() {
 function cluePopUp6() {
   push();
   rectMode(CENTER);
-  fill(80, 210, 90);
-  rect(400, 400, 500, 500, 20);
+  fill(33,37,41);
+  rect(400, 400, 500, 500);
   textAlign(CENTER);
-  textSize(25);
-  fill(255);
-  text('Hey, You found the Clue 6. Congrats!!', width * 0.5, height * 0.35);
-  image(myClue6, 300, 350, 150, 100);
+  textSize(20);
+  textFont('Verdana');
+  fill(206,212,218);
+  text('Clue #6', 400, 310);
+  text('This body is really decomposed..', 400, 340);
+  text('According to the autopsy report,',400, 370);
+  text('it is estimated that the body is 3-4 days old,',400, 400);
+  text('and bloating has been progressed.',400, 430);
+  text('The victim was stabbed to death',400, 460);
+  text('in the left chest, abdomen and left arm,',400, 490);
+  text('and the weapon is presumed to be excessive.',400, 520);
+  imageMode(CENTER);
+  image(myClue6, 400, 230, 140, 140);
   pop();
   popUpButton();
 }
@@ -263,13 +307,22 @@ function cluePopUp6() {
 function boyPopup() {
   push();
   rectMode(CENTER);
-  fill(80, 210, 90);
-  rect(400, 400, 500, 500, 20);
+  fill(173, 181, 189);
+  rect(400, 400, 500, 500);
   textAlign(CENTER);
-  textSize(25);
-  fill(255);
-  text('Hey, You found the suspect 1. Congrats!!', width * 0.5, height * 0.35);
-  image(mySuspect1, 300, 350, 150, 100);
+  textSize(20);
+  textFont('Verdana');
+  fill(52,58,64);
+  text('Suspect #1', 400, 310);
+  text('This body is really decomposed..', 400, 340);
+  text('According to the autopsy report,',400, 370);
+  text('it is estimated that the body is 3-4 days old,',400, 400);
+  text('and bloating has been progressed.',400, 430);
+  text('The victim was stabbed to death',400, 460);
+  text('in the left chest, abdomen and left arm,',400, 490);
+  text('and the weapon is presumed to be excessive.',400, 520);
+  imageMode(CENTER);
+  image(mySuspect1, 400, 230, 140, 140);
   pop();
   popUpButton();
 }
@@ -278,13 +331,22 @@ function boyPopup() {
 function fatherPopup() {
   push();
   rectMode(CENTER);
-  fill(80, 210, 90);
-  rect(400, 400, 500, 500, 20);
+  fill(173, 181, 189);
+  rect(400, 400, 500, 500);
   textAlign(CENTER);
-  textSize(25);
-  fill(255);
-  text('Hey, You found the suspect 2. Congrats!!', width * 0.5, height * 0.35);
-  image(mySuspect2, 300, 350, 150, 100);
+  textSize(20);
+  textFont('Verdana');
+  fill(52,58,64);
+  text('Suspect #2', 400, 310);
+  text('This body is really decomposed..', 400, 340);
+  text('According to the autopsy report,',400, 370);
+  text('it is estimated that the body is 3-4 days old,',400, 400);
+  text('and bloating has been progressed.',400, 430);
+  text('The victim was stabbed to death',400, 460);
+  text('in the left chest, abdomen and left arm,',400, 490);
+  text('and the weapon is presumed to be excessive.',400, 520);
+  imageMode(CENTER);
+  image(mySuspect2, 400, 230, 140, 140);
   pop();
   popUpButton();
 }
@@ -293,13 +355,22 @@ function fatherPopup() {
 function manPopup() {
   push();
   rectMode(CENTER);
-  fill(80, 210, 90);
-  rect(400, 400, 500, 500, 20);
+  fill(173, 181, 189);
+  rect(400, 400, 500, 500);
   textAlign(CENTER);
-  textSize(25);
-  fill(255);
-  text('Hey, You found the suspect 3. Congrats!!', width * 0.5, height * 0.35);
-  image(mySuspect3, 300, 350, 150, 100);
+  textSize(20);
+  textFont('Verdana');
+  fill(52,58,64);
+  text('Suspect #3', 400, 310);
+  text('This body is really decomposed..', 400, 340);
+  text('According to the autopsy report,',400, 370);
+  text('it is estimated that the body is 3-4 days old,',400, 400);
+  text('and bloating has been progressed.',400, 430);
+  text('The victim was stabbed to death',400, 460);
+  text('in the left chest, abdomen and left arm,',400, 490);
+  text('and the weapon is presumed to be excessive.',400, 520);
+  imageMode(CENTER);
+  image(mySuspect3, 400, 230, 140, 140);
   pop();
   popUpButton();
 }
