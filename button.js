@@ -2,6 +2,9 @@ var firstClick;
 var secondClick;
 var popUpClick;
 
+var soundOn;
+var soundOff;
+
 var clickClue1;
 var clickClue2;
 var clickClue3;
@@ -18,6 +21,9 @@ var suspectButton1;
 var suspectButton2;
 var suspectButton3;
 
+let mySoundOn
+let mySoundOff
+
 var gobackbutton;
 var gobacktomainButton;
 var clickImg;
@@ -26,12 +32,43 @@ function startButton() {
   firstClick.locate(550, 550);
   popUpClick.locate(-325, -530);
   secondClick.locate(-325, -530);
+  clickGuess.locate(-400, -500);
+  clickClue6.locate(-400, -500);
+  clickClue5.locate(-400, -500);
+  clickClue4.locate(-400, -500);
+  clickClue3.locate(-400, -500);
+  clickClue3.locate(-400, -500);
+  clickClue2.locate(-400, -500);
+  clickClue1.locate(-400, -500);
+  suspectButton3.locate(-550, -400);
+  suspectButton2.locate(-350, -400);
+  suspectButton1.locate(-150, -400);
+  boyButton.locate(-400, -500);
+  fatherButton.locate(-400, -500);
+  manButton.locate(-400, -500);
 }
 
 function secondButton() {
   firstClick.locate(-400, -500);
   secondClick.locate(325, 550);
   popUpClick.locate(-400, -500);
+  clickGuess.locate(-400, -500);
+  clickClue6.locate(-400, -500);
+  clickClue5.locate(-400, -500);
+  clickClue4.locate(-400, -500);
+  clickClue3.locate(-400, -500);
+  clickClue3.locate(-400, -500);
+  clickClue2.locate(-400, -500);
+  clickClue1.locate(-400, -500);
+  suspectButton3.locate(-550, -400);
+  suspectButton2.locate(-350, -400);
+  suspectButton1.locate(-150, -400);
+  boyButton.locate(-400, -500);
+  fatherButton.locate(-400, -500);
+  manButton.locate(-400, -500);
+  soundOn.locate(-400, -500);
+  soundOff.locate(-400, -500);
+
 }
 function popUpButton() {
   firstClick.locate(-400, -500);
@@ -45,6 +82,9 @@ function mainButton() {
   suspectButton3.locate(-550, -400);
   suspectButton2.locate(-350, -400);
   suspectButton1.locate(-150, -400);
+
+  soundOn.locate(20, 20);
+  soundOff.locate(20, 60);
 
   //duvet
   clickClue1.locate(220, 330);
@@ -166,6 +206,30 @@ function InitialButton() {
   popUpClick.textScaled = true;
   popUpClick.onRelease = function() {
     gameState = 'main'
+  }
+
+  //Sound On
+  soundOn = new Clickable();
+  soundOn.image = mySoundOn;
+  soundOn.locate(-400, -500);
+  soundOn.resize(30, 30);
+  soundOn.text = "  ";
+  soundOn.color = "#00000000";
+  soundOn.strokeWeight = 00;
+  soundOn.onPress = function() {
+    Music();
+  }
+
+  //Sound On
+  soundOff = new Clickable();
+  soundOff.image = mySoundOff;
+  soundOff.locate(-400, -500);
+  soundOff.resize(30, 30);
+  soundOff.text = "  ";
+  soundOff.color = "#00000000";
+  soundOff.strokeWeight = 00;
+  soundOff.onPress = function() {
+    PauseMusic();
   }
 
   //duvet
