@@ -12,6 +12,10 @@ var clickClue4;
 var clickClue5;
 var clickClue6;
 
+var suspect1Count;
+var suspect2Count;
+var suspect3Count;
+
 var clickGuess;
 
 var boyButton;
@@ -30,6 +34,7 @@ var clickImg;
 
 function startButton() {
   firstClick.locate(550, 550);
+
   popUpClick.locate(-325, -530);
   secondClick.locate(-325, -530);
   clickGuess.locate(-400, -500);
@@ -49,8 +54,9 @@ function startButton() {
 }
 
 function secondButton() {
-  firstClick.locate(-400, -500);
   secondClick.locate(325, 550);
+
+  firstClick.locate(-400, -500);
   popUpClick.locate(-400, -500);
   clickGuess.locate(-400, -500);
   clickClue6.locate(-400, -500);
@@ -83,9 +89,6 @@ function mainButton() {
   suspectButton2.locate(-350, -400);
   suspectButton1.locate(-150, -400);
 
-  soundOn.locate(20, 20);
-  soundOff.locate(20, 60);
-
   //duvet
   clickClue1.locate(220, 330);
   //calander
@@ -101,25 +104,25 @@ function mainButton() {
 
 if (clue1Count == 0) {
     boyButton.locate(-500, -650);
-  } else if (clue1Count == 1) {
+  } else if (clue1Count > 0) {
     boyButton.locate(200, 650);
   }
 
 if (clue3Count == 0) {
     fatherButton.locate(-500, -650);
-  } else if (clue3Count == 1) {
+  } else if (clue3Count > 0) {
     fatherButton.locate(350, 650);
   }
 
-if (clue5Count == 0) {
+if (clue2Count == 0) {
   manButton.locate(-500, -650);
-} else if (clue5Count == 1) {
+} else if (clue2Count > 0 && clue6Count > 0) {
   manButton.locate(500, 650);
 }
 
-if (clue2Count == 0) {
+if (suspect3Count == 0) {
   clickGuess.locate(-600, -500);
-} else if (clue2Count > 0 && clue6Count > 0) {
+} else if (suspect1Count > 0 && suspect2Count > 0 && suspect3Count > 0) {
   clickGuess.locate(600, 50);
 }
 
@@ -162,7 +165,6 @@ function wrongPopupButton() {
 }
 
 function gobacktoMainPageButton() {
-  //gobackbutton.locate(200, 530);
   gobacktomainButton.locate(325, 530);
 }
 
@@ -215,10 +217,7 @@ function InitialButton() {
   soundOn.resize(30, 30);
   soundOn.text = "  ";
   soundOn.color = "#00000000";
-  soundOn.strokeWeight = 00;
-  soundOn.onPress = function() {
-    Music();
-  }
+  soundOn.strokeWeight = 0;
 
   //Sound On
   soundOff = new Clickable();
@@ -227,16 +226,13 @@ function InitialButton() {
   soundOff.resize(30, 30);
   soundOff.text = "  ";
   soundOff.color = "#00000000";
-  soundOff.strokeWeight = 00;
-  soundOff.onPress = function() {
-    PauseMusic();
-  }
+  soundOff.strokeWeight = 0;
 
   //duvet
   clickClue1 = new Clickable();
   clickClue1.locate(-400, -500);
   clickClue1.resize(110, 50);
-  clickClue1.text = "  ";
+  clickClue1.text = "         ";
   clickClue1.color = "#00000000";
   clickClue1.strokeWeight = 00;
   clickClue1.onRelease = function() {
@@ -298,7 +294,7 @@ function InitialButton() {
   clickClue4.strokeWeight = 00;
   clickClue4.onPress = function() {
     gameState = 'clue4'
-    //clue4Count = 1;
+    clue4Count = 1;
     clickClue6.locate(-400, -500);
     clickClue5.locate(-400, -500);
     clickClue4.locate(-400, -500);
@@ -354,10 +350,11 @@ function InitialButton() {
   boyButton.imageScale = 1.2;
   boyButton.locate(-400, -500);
   boyButton.resize(100, 130);
-  boyButton.strokeWeight = 00;
+  boyButton.strokeWeight = 0;
   boyButton.text = "   ";
   boyButton.onPress = function() {
     gameState = 'foundBoy'
+    suspect1Count = 1;
     clickClue6.locate(-400, -500);
     clickClue5.locate(-400, -500);
     clickClue4.locate(-400, -500);
@@ -375,10 +372,11 @@ fatherButton.fitImage = true;
 fatherButton.imageScale = 1.2;
 fatherButton.locate(-400, -500);
 fatherButton.resize(100, 130);
-fatherButton.strokeWeight = 00;
+fatherButton.strokeWeight = 0;
 fatherButton.text = "   ";
 fatherButton.onPress = function() {
   gameState = 'foundFather'
+  suspect2Count = 1;
   clickClue6.locate(-400, -500);
   clickClue5.locate(-400, -500);
   clickClue4.locate(-400, -500);
@@ -396,10 +394,11 @@ manButton.fitImage = true;
 manButton.imageScale = 1.2;
 manButton.locate(-400, -500);
 manButton.resize(100, 130);
-manButton.strokeWeight = 00;
+manButton.strokeWeight = 0;
 manButton.text = "   ";
 manButton.onPress = function() {
   gameState = 'foundMan'
+  suspect3Count = 1;
   clickClue6.locate(-400, -500);
   clickClue5.locate(-400, -500);
   clickClue4.locate(-400, -500);
@@ -416,7 +415,7 @@ manButton.onPress = function() {
   suspectButton1.imageScale = 1.2;
   suspectButton1.locate(-400, -500);
   suspectButton1.resize(150, 200);
-  suspectButton1.strokeWeight = 00;
+  suspectButton1.strokeWeight = 0;
   suspectButton1.text = "   ";
   suspectButton1.onPress = function() {
     gameState = 'wrongsuspect'
@@ -432,7 +431,7 @@ manButton.onPress = function() {
   suspectButton2.imageScale = 1.2;
   suspectButton2.locate(-400, -500);
   suspectButton2.resize(150, 200);
-  suspectButton2.strokeWeight = 00;
+  suspectButton2.strokeWeight = 0;
   suspectButton2.text = "   ";
   suspectButton2.onPress = function() {
     gameState = 'wrongsuspect'
@@ -448,7 +447,7 @@ manButton.onPress = function() {
   suspectButton3.imageScale = 1.2;
   suspectButton3.locate(-400, -500);
   suspectButton3.resize(150, 200);
-  suspectButton3.strokeWeight = 00;
+  suspectButton3.strokeWeight = 0;
   suspectButton3.text = "   ";
   suspectButton3.onPress = function() {
     gameState = 'rightsuspect'
@@ -468,7 +467,7 @@ manButton.onPress = function() {
     clickGuess.textSize = 20;
     clickGuess.textFont = "Verdana";
     popUpClick.textScaled = true;
-    clickGuess.strokeWeight = 00;
+    clickGuess.strokeWeight = 0;
     clickGuess.onPress = function() {
       gameState = 'suspectScreen'
       clickGuess.locate(-400, -500);

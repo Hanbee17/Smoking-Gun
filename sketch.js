@@ -38,23 +38,24 @@ function setup() {
   titleScreen();
 }
 
-//Music_work last
-// function keyPressed() {
-//   if (keyCode == 32) {
-//     Music();
-//   } else if (keyCode === 13) {
-//     PauseMusic();
-//   }
-// }
-
+//Music_work
+function keyPressed() {
+  if (keyCode == 32) {
+    Music();
+    soundOn.locate(20, 20);
+    soundOff.locate(-20, -20);
+  } else if (keyCode === 13) {
+    PauseMusic();
+    soundOn.locate(-20, -20);
+    soundOff.locate(20, 20);
+  }
+}
 
 function Music() {
   if (myBgMusic.isPlaying() == false) {
-    //RanBgm = int(random(myBgMusic.length));
-    //myBgMusic = myBgMusic[RanBgm];
     myBgMusic.play();
+    //myBgMusic.loop();
   }
-  myBgMusic.loop();
 }
 
 function PauseMusic() {
@@ -62,6 +63,7 @@ function PauseMusic() {
 }
 
 function draw() {
+
   switch (gameState) {
     case 'title':
       titleScreen();
@@ -165,15 +167,6 @@ function DescriptionPopUpScreen() {
 function mainScreen() {
   background(0);
   image(mainBackground, 0, 175, 800, 450);
-  // push();
-  // textAlign(CENTER);
-  // textSize(16);
-  // textFont('Verdana');
-  // fill(73,80,87);
-  // text('Click the suspicious areas to find clues.', 194, 70);
-  // text('Press "Sapce" to play music.', 150, 90);
-  // text('Press "Enter" to stop music.', 148, 110);
-  // pop();
   mainButton();
 }
 
@@ -282,7 +275,7 @@ function cluePopUp5() {
   textFont('Verdana');
   fill(206, 212, 218);
   text('Clue #5', 400, 310);
-  text('The cell phone was on the hand of the victim,', 400, 340);
+  text('The cell phone was in the hand of the victim,', 400, 340);
   text('but as there were no other fingerprints,', 400, 370);
   text('it is presumed that the victim and', 400, 400);
   text('cell phone were not moved after death.', 400, 430);
@@ -382,7 +375,7 @@ function manPopup() {
   text('Suspect #3', 400, 300);
   text('He was unemployed, homeless and an alcoholic.', 400, 330);
   text('He was seen walking together in', 400, 360);
-  text('the neighborhood on the day of the incident', 400, 390);
+  text('the neighborhood on the day of the incident.', 400, 390);
   text('He denied that and the next day', 400, 420);
   text('he left a suicide note and disappeared.', 400, 450);
   text('However, the handwriting of the suicide note was', 400, 480);
