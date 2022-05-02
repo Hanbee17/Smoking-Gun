@@ -1,5 +1,7 @@
 # Game Project
 
+To play: [Click here](https://hanbee17.github.io/Cho_Node3/)
+
 Game Title: **Smoking Gun**
 
 Basic Format: Mystery Investigation Game
