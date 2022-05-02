@@ -149,16 +149,23 @@ function DescriptionPopUpScreen() {
   push();
   rectMode(CENTER);
   fill(33, 37, 41);
-  rect(400, 400, 500, 500);
+  rect(400, 400, 550, 550);
   textAlign(CENTER);
   textSize(20);
   textFont('Verdana');
   fill(206, 212, 218);
-  text('The first case is', 400, 300, 300, 200);
-  text('“Dead body cohabitation case”.', 400, 325, 350, 200);
-  text('One day in September 2009,', 400, 350, 300, 200);
-  text('when the father returned home from 5 days of a business trip,', 400, 375, 300, 200);
-  text('what he found was a very strange stench and the appearance of his son eating his meal. According to the father, the intial reporter, the son was eating next to a decomposed body.', 400, 449, 300, 200);
+  text('The first case is', 400, 210);
+  fill(255);
+  text('“Dead body cohabitation case”', 400, 240);
+  fill(206, 212, 218);
+  text('One day in September 2009,', 400, 270);
+  text('when the father returned home from', 400, 300);
+  text('5 days of a business trip,', 400, 330);
+  text('what he found was a very strange stench and', 400, 360);
+  text('the appearance of his son eating his meal.', 400, 390);
+  text('According to the father, the intial reporter', 400, 420);
+  text('what he found was a very strange stench and', 400, 450);
+  text('the son was eating next to a decomposed body.', 400, 480);
   pop();
   secondButton();
 }
@@ -175,7 +182,7 @@ function cluePopUp1() {
   push();
   rectMode(CENTER);
   fill(33, 37, 41);
-  rect(400, 400, 500, 500);
+  rect(400, 400, 550, 550);
   textAlign(CENTER);
   textSize(17);
   textFont('Verdana');
@@ -187,7 +194,7 @@ function cluePopUp1() {
   text('Test results showed that', 400, 450);
   text('the blood belonged to the victim.', 400, 480);
   imageMode(CENTER);
-  image(myClue1, 400, 230, 192, 192);
+  image(myClue1, 400, 230, 140, 140);
   pop();
   popUpButton();
 }
@@ -198,7 +205,7 @@ function cluePopUp2() {
   push();
   rectMode(CENTER);
   fill(33, 37, 41);
-  rect(400, 400, 500, 500);
+  rect(400, 400, 550, 550);
   textAlign(CENTER);
   textSize(17);
   textFont('Verdana');
@@ -218,22 +225,21 @@ function cluePopUp3() {
   push();
   rectMode(CENTER);
   fill(33, 37, 41);
-  rect(400, 400, 500, 500);
+  rect(400, 400, 550, 550);
   textAlign(CENTER);
   textSize(17);
   textFont('Verdana');
   fill(206, 212, 218);
   text('Clue #3', 400, 290);
-  text('This body is really decomposed..', 400, 320);
-  text('According to the autopsy report,', 400, 350);
-  text('it is estimated that the body has been out 3-4 days,', 400, 380);
-  text('as bloating has been progressed.', 400, 410);
-  text('The victim was stabbed to death', 400, 440);
-  text('in the left chest, abdomen and left arm,', 400, 470);
-  text('and the weapon is presumed to be a fruit knife.', 400, 500);
-  text('The knife was never found.', 400, 530);
-  text('Since the body was not wearing shoes, it is likely', 400, 560);
-  text('that he entered the house on his free will.', 400, 590);
+  text('According to the autopsy report,', 400, 320);
+  text('it is estimated that the body has been out 3-4 days,', 400, 350);
+  text('as bloating has been progressed.', 400, 380);
+  text('The victim was stabbed to death', 400, 410);
+  text('in the left chest, abdomen and left arm,', 400, 440);
+  text('and the weapon is presumed to be a fruit knife.', 400, 470);
+  text('The knife was never found.', 400, 500);
+  text('Since the body was not wearing shoes, it is likely', 400, 530);
+  text('that he entered the house on his free will.', 400, 560);
   imageMode(CENTER);
   image(myClue3, 400, 230, 140, 140);
   pop();
@@ -245,7 +251,7 @@ function cluePopUp4() {
   push();
   rectMode(CENTER);
   fill(33, 37, 41);
-  rect(400, 400, 500, 500);
+  rect(400, 400, 550, 550);
   textAlign(CENTER);
   textSize(17);
   textFont('Verdana');
@@ -269,7 +275,7 @@ function cluePopUp5() {
   push();
   rectMode(CENTER);
   fill(33, 37, 41);
-  rect(400, 400, 500, 500);
+  rect(400, 400, 550, 550);
   textAlign(CENTER);
   textSize(17);
   textFont('Verdana');
@@ -293,7 +299,7 @@ function cluePopUp6() {
   push();
   rectMode(CENTER);
   fill(33, 37, 41);
-  rect(400, 400, 500, 500);
+  rect(400, 400, 550, 550);
   textAlign(CENTER);
   textSize(17);
   textFont('Verdana');
@@ -317,15 +323,15 @@ function cluePopUp6() {
 function boyPopup() {
   push();
   rectMode(CENTER);
-  fill(108, 117, 125);
-  rect(400, 400, 500, 500);
+  fill(73, 80, 87);
+  rect(400, 400, 550, 550);
   textAlign(CENTER);
   textSize(17);
   textFont('Verdana');
-  fill(52, 58, 64);
+  fill(233, 236, 239);
   text('Suspect #1', 400, 300);
   text('The son is 15 yesrs old.', 400, 330);
-  text('He was mostly iving alone, waiting for his father.', 400, 360);
+  text('He is mostly iving alone, waiting for his father.', 400, 360);
   text('He was living with the body for 5 days.', 400, 390);
   text('He is a prime suspect,', 400, 420);
   text('but he has an intellectual disability.', 400, 450);
@@ -342,14 +348,14 @@ function boyPopup() {
 function fatherPopup() {
   push();
   rectMode(CENTER);
-  fill(108, 117, 125);
-  rect(400, 400, 500, 500);
+  fill(73, 80, 87);
+  rect(400, 400, 550, 550);
   textAlign(CENTER);
   textSize(17);
   textFont('Verdana');
-  fill(52, 58, 64);
+  fill(233, 236, 239);
   text('Suspect #2', 400, 300);
-  text('He is a freight forwarder, so he was out of ', 400, 330);
+  text('The father is a freight forwarder, so he was out of ', 400, 330);
   text('town and away from home for a few days.', 400, 360);
   text('He is the intial reporter, but a strong suspect,', 400, 390);
   text('as the victim died on the same day', 400, 420);
@@ -366,16 +372,16 @@ function fatherPopup() {
 function manPopup() {
   push();
   rectMode(CENTER);
-  fill(108, 117, 125);
-  rect(400, 400, 500, 500);
+  fill(73, 80, 87);
+  rect(400, 400, 550, 550);
   textAlign(CENTER);
   textSize(17);
   textFont('Verdana');
-  fill(52, 58, 64);
+  fill(233, 236, 239);
   text('Suspect #3', 400, 300);
-  text('He was unemployed, homeless and an alcoholic.', 400, 330);
-  text('He was seen walking together in', 400, 360);
-  text('the neighborhood on the day of the incident.', 400, 390);
+  text('The man was unemployed, homeless and an alcoholic.', 400, 330);
+  text('He was seen walking together with the victim', 400, 360);
+  text('in the neighborhood on the day of the incident.', 400, 390);
   text('He denied that and the next day', 400, 420);
   text('he left a suicide note and disappeared.', 400, 450);
   text('However, the handwriting of the suicide note was', 400, 480);
@@ -396,7 +402,7 @@ function guessScreen() {
   textSize(25);
   textFont('Verdana');
   fill(255);
-  text('Click the most suspicious murderer.', 400, 100);
+  text('Click the most suspicious murderer.', 400, 200);
   lastPageButton();
 }
 
@@ -405,12 +411,13 @@ function wrongSuspectPopup() {
   push();
   rectMode(CENTER);
   fill(173, 181, 189);
-  rect(400, 400, 500, 500);
+  rect(400, 400, 550, 550);
   textAlign(CENTER);
-  textSize(17);
+  textSize(23);
   textFont('Verdana');
-  fill(52, 58, 64);
+  fill(233, 236, 239);
   text('This suspect is not a murderer.', 400, 310);
+  text('You should go back and investigate more.', 400, 350);
   pop();
   wrongPopupButton();
 }
@@ -420,13 +427,24 @@ function endScreen() {
   push();
   rectMode(CENTER);
   fill(173, 181, 189);
-  rect(400, 400, 500, 500);
+  rect(400, 400, 550, 550);
   textAlign(CENTER);
-  textSize(17);
   textFont('Verdana');
-  fill(52, 58, 64);
-  text('This suspect is a murderer.', 400, 280);
-  text('', 400, 310);
+  textSize(23);
+  fill(255);
+  text('This suspect is a murderer.', 400, 200);
+  textSize(16);
+  fill(233, 236, 239);
+  text('This is based on the true story.', 400, 250);
+  text("The murderer went to the father's house with the victim", 400, 280);
+  text('to get the money back from the father.', 400, 310);
+  text('However, the son was the only one there, so he quesitoned', 400, 340);
+  text('the son about the father, but the son could not answer.', 400, 370);
+  text('The murderer assulted the son and made the "promissory note"', 400, 400);
+  text('and forced the son signed for it. The victim grumbled', 400, 430);
+  text('that they wasted their time and it triggered he', 400, 460);
+  text('to stab the victim with the knife that he was going to use', 400, 490);
+  text('to threat the father and he ran away and threw the knife away.', 400, 520);
   pop();
   gobacktoMainPageButton();
 }

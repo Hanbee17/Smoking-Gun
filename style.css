@@ -1,9 +1,13 @@
 html, body {
+  width: 800px;
+  height: auto;
+  margin: auto;
+  padding-top: 20px;
 }
 canvas {
   display: block;
   margin: auto;
-  padding-top: 50px;
+  padding-top: 10px;
 }
 
 p{

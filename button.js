@@ -51,10 +51,11 @@ function startButton() {
   boyButton.locate(-400, -500);
   fatherButton.locate(-400, -500);
   manButton.locate(-400, -500);
+  gobacktomainButton.locate(-400, -500);
 }
 
 function secondButton() {
-  secondClick.locate(325, 550);
+  secondClick.locate(275, 550);
 
   firstClick.locate(-400, -500);
   popUpClick.locate(-400, -500);
@@ -74,12 +75,13 @@ function secondButton() {
   manButton.locate(-400, -500);
   soundOn.locate(-400, -500);
   soundOff.locate(-400, -500);
+  gobacktomainButton.locate(-400, -500);
 
 }
 function popUpButton() {
   firstClick.locate(-400, -500);
   secondClick.locate(-400, -500);
-  popUpClick.locate(325, 590);
+  popUpClick.locate(250, 590);
 }
 
 function mainButton() {
@@ -88,6 +90,7 @@ function mainButton() {
   suspectButton3.locate(-550, -400);
   suspectButton2.locate(-350, -400);
   suspectButton1.locate(-150, -400);
+  gobacktomainButton.locate(-400, -500);
 
   //duvet
   clickClue1.locate(220, 330);
@@ -105,25 +108,25 @@ function mainButton() {
 if (clue1Count == 0) {
     boyButton.locate(-500, -650);
   } else if (clue1Count > 0) {
-    boyButton.locate(200, 650);
+    boyButton.locate(200, 680);
   }
 
 if (clue3Count == 0) {
     fatherButton.locate(-500, -650);
   } else if (clue3Count > 0) {
-    fatherButton.locate(350, 650);
+    fatherButton.locate(350, 680);
   }
 
 if (clue2Count == 0) {
   manButton.locate(-500, -650);
 } else if (clue2Count > 0 && clue6Count > 0) {
-  manButton.locate(500, 650);
+  manButton.locate(500, 680);
 }
 
 if (suspect3Count == 0) {
   clickGuess.locate(-600, -500);
 } else if (suspect1Count > 0 && suspect2Count > 0 && suspect3Count > 0) {
-  clickGuess.locate(600, 50);
+  clickGuess.locate(560, 50);
 }
 
 }
@@ -140,12 +143,13 @@ function lastPageButton() {
   boyButton.locate(-400, -500);
   fatherButton.locate(-400, -500);
   manButton.locate(-400, -500);
+  gobacktomainButton.locate(-400, -500);
 
   suspectButton3.locate(550, 300);
   suspectButton2.locate(325, 300);
   suspectButton1.locate(100, 300);
 
-  popUpClick.locate(330, 650);
+  popUpClick.locate(255, 680);
 }
 
 function wrongPopupButton() {
@@ -160,21 +164,24 @@ function wrongPopupButton() {
   suspectButton3.locate(-550, -400);
   suspectButton2.locate(-350, -400);
   suspectButton1.locate(-150, -400);
+  gobacktomainButton.locate(-400, -500);
 
-  gobackbutton.locate(325, 530);
+  gobackbutton.locate(275, 500);
 }
 
 function gobacktoMainPageButton() {
-  gobacktomainButton.locate(325, 530);
+  gobacktomainButton.locate(245, 580);
 }
 
 function InitialButton() {
   firstClick = new Clickable();
-  firstClick.resize(150, 50);
-  firstClick.color = "#00000000";
+  firstClick.resize(130, 45);
+  firstClick.color = "#495057";
+  firstClick.cornerRadius = 10;
   firstClick.strokeWeight = 0;
+  firstClick.stroke = "#495057";
   firstClick.text = "CASE 1";
-  firstClick.textColor = "#ADB5BD";
+  firstClick.textColor = "#DEE2E6";
   firstClick.textSize = 28;
   firstClick.textFont = "Verdana";
   firstClick.textScaled = true;
@@ -184,23 +191,28 @@ function InitialButton() {
 
   secondClick = new Clickable();
   secondClick.locate(-400, -550);
-  secondClick.resize(150, 50);
-  secondClick.color = "#00000000";
+  secondClick.resize(250, 45);
+  secondClick.color = "#6C757D";
+  secondClick.cornerRadius = 10;
   secondClick.strokeWeight = 0;
+  secondClick.stroke = "#6C757D";
   secondClick.text = "Start investigation";
   secondClick.textColor = "#F8F9FA";
   secondClick.textSize = 25;
   secondClick.textFont = "Verdana";
   secondClick.textScaled = true;
   secondClick.onRelease = function() {
+    alert("Trigger Warning!! This content contains blood and dead body illsutration.")
     gameState = 'main'
   }
 
   popUpClick = new Clickable();
   popUpClick.locate(-400, -550);
-  popUpClick.resize(150, 50);
-  popUpClick.color = "#00000000";
+  popUpClick.resize(300, 40);
+  popUpClick.color = "#6C757D";
+  popUpClick.cornerRadius = 10;
   popUpClick.strokeWeight = 0;
+  popUpClick.stroke = "#6C757D";
   popUpClick.textColor = "#F8F9FA";
   popUpClick.textSize = 23;
   popUpClick.textFont = "Verdana";
@@ -344,7 +356,7 @@ function InitialButton() {
 
 //Boy Button
   boyButton = new Clickable();
-  boyButton.color = "#ADB5BD";
+  boyButton.color = "#6C757D";
   boyButton.image = mySuspect1;
   boyButton.fitImage = true;
   boyButton.imageScale = 1.2;
@@ -366,7 +378,7 @@ function InitialButton() {
 
 //Father Button
 fatherButton = new Clickable();
-fatherButton.color = "#ADB5BD";
+fatherButton.color = "#6C757D";
 fatherButton.image = mySuspect2;
 fatherButton.fitImage = true;
 fatherButton.imageScale = 1.2;
@@ -388,7 +400,7 @@ fatherButton.onPress = function() {
 
 //Man Button
 manButton = new Clickable();
-manButton.color = "#ADB5BD";
+manButton.color = "#6C757D";
 manButton.image = mySuspect3;
 manButton.fitImage = true;
 manButton.imageScale = 1.2;
@@ -459,15 +471,16 @@ manButton.onPress = function() {
   //Guess the Suspect Button
     clickGuess = new Clickable();
     clickGuess.locate(-400, -500);
-    clickGuess.resize(150, 80);
-    clickGuess.color = "#00000000";
+    clickGuess.resize(250, 50);
+    clickGuess.color = "#6C757D";
+    clickGuess.cornerRadius = 10;
     clickGuess.strokeWeight = 0;
+    clickGuess.stroke = "#6C757D";
     clickGuess.text = "Guess the Murderer!";
-    clickGuess.textColor = "#CED4DA";
+    clickGuess.textColor = "#F8F9FA";
     clickGuess.textSize = 20;
     clickGuess.textFont = "Verdana";
-    popUpClick.textScaled = true;
-    clickGuess.strokeWeight = 0;
+    clickGuess.textScaled = true;
     clickGuess.onPress = function() {
       gameState = 'suspectScreen'
       clickGuess.locate(-400, -500);
@@ -478,10 +491,11 @@ manButton.onPress = function() {
 
   gobackbutton = new Clickable();
   gobackbutton.locate(-400, -500);
-  gobackbutton.resize(150, 50);
-  gobackbutton.text = "   ";
-  gobackbutton.color = "#00000000";
+  gobackbutton.resize(250, 45);
+  gobackbutton.color = "#6C757D";
+  gobackbutton.cornerRadius = 10;
   gobackbutton.strokeWeight = 0;
+  gobackbutton.stroke = "#6C757D";
   gobackbutton.textColor = "#F8F9FA";
   gobackbutton.textSize = 23;
   gobackbutton.textFont = "Verdana";
@@ -497,14 +511,15 @@ manButton.onPress = function() {
 
   gobacktomainButton = new Clickable();
   gobacktomainButton.locate(-400, -500);
-  gobacktomainButton.resize(150, 50);
-  gobacktomainButton.text = "   ";
-  gobacktomainButton.color = "#00000000";
+  gobacktomainButton.resize(320, 45);
+  gobacktomainButton.color = "#6C757D";
+  gobacktomainButton.cornerRadius = 10;
   gobacktomainButton.strokeWeight = 0;
+  gobacktomainButton.stroke = "#6C757D";
   gobacktomainButton.textColor = "#F8F9FA";
   gobacktomainButton.textSize = 23;
   gobacktomainButton.textFont = "Verdana";
-  gobacktomainButton.text = "Go Back to the Main Page.";
+  gobacktomainButton.text = "Go Back to the Main Page";
   gobacktomainButton.textScaled = true;
   gobacktomainButton.onPress = function() {
     gameState = 'title'
