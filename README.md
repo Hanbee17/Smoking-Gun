@@ -1,6 +1,6 @@
 # Game Project
 
-To play: [Click here](https://hanbee17.github.io/Cho_Node3/)
+To play: [Click here](https://hanbee17.github.io/Smoking-Gun/)
 
 Game Title: **Smoking Gun**
 
